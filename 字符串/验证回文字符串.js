@@ -14,7 +14,7 @@
 
 const func1 = s => {
   // 1. 将出入的字符串，统一转换为小写后，利用正则排除不是字母和数字的，在转换为数组
-  const arr = s.toLowerCase().replace(/^[A-Za-z0-9]/g, '').split('')
+  const arr = s.toLowerCase().replace(/[^A-Za-z0-9]/g, '').split('')
   let i = 0
   let j = arr.length - 1
   // 循环比较元素
@@ -40,7 +40,7 @@ const func1 = s => {
 
 const func2 = s => {
   // 1. 方便比较，统一转换成小写，剔除其中非字母和数字
-  const str = s.toLowerCase().replace(/^[A-Za-z0-9]/g, '')
+  const str = s.toLowerCase().replace(/[^A-Za-z0-9]/g, '')
   // 2. 将字符串转换为数组，然后翻转，在拼接成新的字符串
   const newStr = str.split('').reverse().join('')
   // 对比两个字符串得到最后结果
